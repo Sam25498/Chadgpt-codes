@@ -16,3 +16,17 @@ event = {
     'dateTime': '2022-01-01T09:00:00-07:00',
     'timeZone': 'America/Los_Angeles',
  
+ },
+  'end': {
+    'dateTime': '2022-01-01T17:00:00-07:00',
+    'timeZone': 'America/Los_Angeles',
+  },
+  'attendees': [
+    {'email': 'attendee1@example.com'},
+    {'email': 'attendee2@example.com'},
+  ],
+  'reminders': {
+    'useDefault': True
+  },
+}
+
