@@ -30,3 +30,6 @@ event = {
   },
 }
 
+# Create the event
+event = service.events().insert(calendarId='primary', body=event).execute()
+print(f'Event created: {event.get("htmlLink")}')
