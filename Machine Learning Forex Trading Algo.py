@@ -17,4 +17,13 @@ kmeans.fit(X)
 cluster_labels = kmeans.predict(X)
 
 
+# Add the cluster labels to the DataFrame
+df['cluster'] = cluster_labels
+
+# Group the data by cluster and calculate the mean values for each cluster
+cluster_stats = df.groupby('cluster').mean()
+
+# Print the mean values for each cluster
+print(cluster_stats)
+
 
