@@ -33,6 +33,26 @@ class SupportResistanceAlgorithm(QCAlgorithm):
         # Check if we have enough data to compute the moving average
         if not self.ma.IsReady:
             return
+        
+            def EndOfDay(self):
+        # Check if we have any open positions
+        if self.Portfolio[self.symbol].Quantity == 0:
+            return
+
+        # Calculate the support and resistance levels
+        holdings = self.Portfolio[self.symbol]
+        support = self.Securities[self.symbol].Low
+        resistance = self.Securities[self.symbol].High
+
+        # Check if the current price is below the support level
+        if holdings.Price < support:
+            # Close the position
+            self.Liquidate(self.symbol)
+        # Check if the current price is above the resistance level
+        elif holdings.Price > resistance:
+            # Close the position
+            self.Liquidate(self.symbol)
+
 
         # Check if we have any open positions
         if self.Portfolio[self.symbol].Quantity > 0:
