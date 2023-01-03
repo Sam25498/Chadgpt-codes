@@ -18,3 +18,15 @@ df['Position'] = np.where(df['Momentum'] > 0, 1, 0)
 
 # Sell when the momentum is negative
 df['Position'] = np.where(df['Momentum'] < 0, -1, df['Position'])
+
+# Calculate the daily returns
+df['Returns'] = df['Close'].pct_change(periods=1)
+
+# Calculate the strategy returns
+df['Strategy'] = df['Returns'] * df['Position']
+
+
+
+
+
+
