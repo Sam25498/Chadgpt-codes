@@ -16,3 +16,5 @@ df['Momentum'] = df['Close'].diff(periods=12)
 # Buy when the momentum is positive
 df['Position'] = np.where(df['Momentum'] > 0, 1, 0)
 
+# Sell when the momentum is negative
+df['Position'] = np.where(df['Momentum'] < 0, -1, df['Position'])
