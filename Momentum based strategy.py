@@ -26,7 +26,8 @@ df['Returns'] = df['Close'].pct_change(periods=1)
 df['Strategy'] = df['Returns'] * df['Position']
 
 
-
+# Print the strategy returns
+print(df['Strategy'])
 
 
 
