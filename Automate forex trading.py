@@ -10,4 +10,7 @@ while True:
     price = c.get_rate('USD', 'EUR')
     print(f'Current price: {price}')
 
+    # Add your trading logic here
 
+    # Sleep for 4 hours
+    time.sleep(4 * 3600)
