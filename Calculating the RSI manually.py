@@ -32,3 +32,11 @@ def calculate_rsi(data):
         rsi = 100 - (100 / (1 + rs))
         rsi_list.append(rsi)
     return rsi_list[::-1]
+"""
+This function first initializes gain, loss, and rsi_list variables. Then it iterates through the data and calculates the gain and loss 
+using the difference between the current and previous data point. Next, it calculates the relative strength using the average gain and average loss. 
+It then uses the relative strength value to calculate the RSI. Finally, it returns the list of RSI values, but in reverse order (from most recent to earlier).
+
+It's important to note that this function assumes that the data is a list or array of numerical values. If the data is in a different format, the function will
+need to be modified accordingly. Also, the RSI values are typically considered overbought when above 70 and oversold when below 30.
+"""
