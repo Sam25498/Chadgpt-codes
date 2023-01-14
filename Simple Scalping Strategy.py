@@ -9,3 +9,9 @@ class SimpleScalpingStrategy(QCAlgorithm):
         self.fast = self.EMA(self.symbol, 14, Resolution.Hour)
         self.slow = self.EMA(self.symbol, 28, Resolution.Hour)
 
+    def OnData(self, data):
+        if not data.ContainsKey(self.symbol):
+            return
+        if data[self.symbol].Time.date() != self.Time.date():
+            return
+
