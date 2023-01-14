@@ -21,3 +21,5 @@ class SimpleScalpingStrategy(QCAlgorithm):
             if self.Portfolio[self.symbol].Quantity <= 0:
                 self.Order(self.symbol, 1)
         elif self.fast < self.slow:
+            if self.Portfolio[self.symbol].Quantity >= 0:
+                self.Order(self.symbol, -1)
