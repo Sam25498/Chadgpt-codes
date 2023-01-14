@@ -15,3 +15,7 @@ class SimpleScalpingStrategy(QCAlgorithm):
         if data[self.symbol].Time.date() != self.Time.date():
             return
 
+        if not self.fast.IsReady or not self.slow.IsReady:
+            return
+        if self.fast > self.slow:
+            if self.Portfolio[self.symbol].Quantity <= 0:
