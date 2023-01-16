@@ -27,3 +27,6 @@ class ForexAlgorithm(QCAlgorithm):
         self.bullish_engulfing.Update(bar.EndTime, bar)  # Update the bullish engulfing indicator
 
   
+      # Check if the price has broken the resistance level
+        if self.resistance_level is not None and bar.Close > self.resistance_level:
+            self.resistance_level = None  # Clear the resistance level
