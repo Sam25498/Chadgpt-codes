@@ -30,3 +30,11 @@ class ForexAlgorithm(QCAlgorithm):
       # Check if the price has broken the resistance level
         if self.resistance_level is not None and bar.Close > self.resistance_level:
             self.resistance_level = None  # Clear the resistance level
+
+        # Check if the price has retested the resistance level
+        if self.resistance_level is not None and self.previous_bar is not None and self.previous_bar.Low <= self.resistance_level <= bar.High:
+            # Check if the bullish engulfing pattern is formed
+            if self.bullish_engulfing.IsFormed:
+                self.Buy(self.Symbol, 1)  # Execute a buy trade
+
+        self.previous_bar = bar  # Store the previous bar for later reference
