@@ -16,3 +16,14 @@ class ForexAlgorithm(QCAlgorithm):
         self.bullish_engulfing = CandlestickPatterns.BullishEngulfing(self.Symbol)  # Initialize the bullish engulfing indicator
 
 
+        self.resistance_level = None  # Initialize the resistance level variable
+        self.previous_bar = None  # Initialize the previous bar variable
+
+    def OnData(self, data):
+        if not data.ContainsKey(self.Symbol):
+            return
+
+        bar = data[self.Symbol]  # Get the current bar
+        self.bullish_engulfing.Update(bar.EndTime, bar)  # Update the bullish engulfing indicator
+
+  
