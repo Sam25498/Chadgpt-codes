@@ -1,0 +1,1 @@
+#ere is an example of a Python function that takes a condition and a list of Forex bar data as arguments, and outputs the number of bars since the last time the condition was true:ere is an example of a Python function that takes a condition and a list of Forex bar data as arguments, and outputs the number of bars since the last time the condition was true:
