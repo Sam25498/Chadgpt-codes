@@ -55,3 +55,6 @@ def condition(bar):
     return bar['Open'] > bar['Close']
 count_bars_since_condition(condition, data)
 # Output: 2
+"""
+Here, the function is counting the number of bars since the last time the open price was greater than the close price in the list of data.
+"""
