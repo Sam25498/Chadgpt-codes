@@ -12,3 +12,12 @@ def count_bars_since_condition(condition, data):
 This function uses a for loop to iterate through the list of Forex bar data, and checks each bar against the provided condition. If the condition is met, the condition_met variable is set to True, and the loop continues. If the condition is not met and condition_met is True, the count is incremented. The function returns the final count.
 You can use this function by providing a specific condition and list of data as arguments, like this:v
 """
+
+data = [{'Open':1.1,'Close':1.2,'High':1.3,'Low':1.0},
+        {'Open':1.2,'Close':1.3,'High':1.4,'Low':1.1},
+        {'Open':1.3,'Close':1.2,'High':1.5,'Low':1.2}
+       ]
+def condition(bar):
+    return bar['Open'] > bar['Close']
+count_bars_since_condition(condition, data)
+# Output: 1
