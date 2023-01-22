@@ -29,3 +29,14 @@ Here, the function is counting the number of bars since the last time the open p
 
 """Here's an example of a python function that takes a condition as an argument and outputs an integer value, which represents 
 the number of forex bars since the last time the condition was true:"""
+
+def count_bars_since_condition(condition, data):
+    count = 0
+    condition_met = False
+    for bar in data:
+        if condition(bar):
+            condition_met = True
+            count = 0
+        elif condition_met:
+            count += 1
+    return count
