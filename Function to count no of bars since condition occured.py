@@ -40,3 +40,10 @@ def count_bars_since_condition(condition, data):
         elif condition_met:
             count += 1
     return count
+
+"""
+This function takes a condition function and a list of Forex bar data as arguments. It then initializes a count variable to 0 and a condition_met variable to False. 
+It iterates through the list of data, and for each bar, it checks if the condition is true. If it is, it sets the condition_met variable to True and resets the count 
+variable to 0. If the condition is not met and the condition_met variable is True, it increments the count variable. The function then returns the final count.
+You can use this function by providing a specific condition and list of data as arguments, like this:
+"""
