@@ -21,3 +21,11 @@ def condition(bar):
     return bar['Open'] > bar['Close']
 count_bars_since_condition(condition, data)
 # Output: 1
+
+"""
+Here, the function is counting the number of bars since the last time the open price was greater than the close price in the list of data.
+"""
+################## Second Iteration of doing the same thing in a slightly different way  ##################
+
+"""Here's an example of a python function that takes a condition as an argument and outputs an integer value, which represents 
+the number of forex bars since the last time the condition was true:"""
