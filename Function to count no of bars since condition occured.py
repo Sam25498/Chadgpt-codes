@@ -47,3 +47,11 @@ It iterates through the list of data, and for each bar, it checks if the conditi
 variable to 0. If the condition is not met and the condition_met variable is True, it increments the count variable. The function then returns the final count.
 You can use this function by providing a specific condition and list of data as arguments, like this:
 """
+data = [{'Open':1.1,'Close':1.2,'High':1.3,'Low':1.0},
+        {'Open':1.2,'Close':1.3,'High':1.4,'Low':1.1},
+        {'Open':1.3,'Close':1.2,'High':1.5,'Low':1.2}
+       ]
+def condition(bar):
+    return bar['Open'] > bar['Close']
+count_bars_since_condition(condition, data)
+# Output: 2
